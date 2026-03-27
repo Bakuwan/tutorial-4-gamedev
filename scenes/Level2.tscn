@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4f4k1kmcd5y3" path="res://scenes/AreaTrigger.tscn" id="4_qe5b6"]
 [ext_resource type="Script" path="res://scenes/spawner.gd" id="5_qe5b6"]
 [ext_resource type="PackedScene" uid="uid://8kyflqnqle00" path="res://scenes/Slime.tscn" id="6_4p0dt"]
+[ext_resource type="PackedScene" uid="uid://qt2eeo8scneg" path="res://scenes/life_counter.tscn" id="7_qwp14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sp0w3"]
 texture = ExtResource("2_l6gr7")
@@ -72,9 +73,13 @@ sceneName = "WinScreen"
 [node name="AreaTrigger" parent="LoseArea" unique_id=183224452 instance=ExtResource("4_qe5b6")]
 position = Vector2(921.00006, 749)
 scale = Vector2(30, 1)
-sceneName = "LoseScreen"
+sceneName = "Level2"
 
 [node name="Spawner" type="Node2D" parent="." unique_id=334962488]
 position = Vector2(1177, -688)
 script = ExtResource("5_qe5b6")
 obstacle = ExtResource("6_4p0dt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1371022504]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1740375667 instance=ExtResource("7_qwp14")]

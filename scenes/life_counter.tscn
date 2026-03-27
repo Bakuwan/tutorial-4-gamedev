@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://qt2eeo8scneg"]
+
+[ext_resource type="FontFile" uid="uid://cbatf6qi20kj3" path="res://assets/Fonts/Mikodacs.otf" id="1_coxm1"]
+[ext_resource type="Script" uid="uid://bwih73qtjlbjv" path="res://life_counter.gd" id="1_ywwlr"]
+
+[node name="LifeCounter" type="MarginContainer" unique_id=1740375667]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=38876212]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_coxm1")
+theme_override_font_sizes/font_size = 80
+script = ExtResource("1_ywwlr")

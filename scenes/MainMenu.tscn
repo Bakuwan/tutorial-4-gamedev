@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bjrgilkw6m3gd"]
+
+[ext_resource type="FontFile" uid="uid://cbatf6qi20kj3" path="res://assets/Fonts/Mikodacs.otf" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="2_2wh52"]
+[ext_resource type="Script" uid="uid://bxmnsbbk2e44x" path="res://scenes/link_button.gd" id="2_ow34m"]
+
+[node name="MainMenu" type="MarginContainer" unique_id=1058797173]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=755868204]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2046055045]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=628739897]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6901961, 0.10980392, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("1_0ykhv")
+theme_override_font_sizes/font_size = 100
+text = "Familiar Rocket"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=2054686798]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NewGame" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1978696073]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ykhv")
+theme_override_font_sizes/font_size = 60
+text = "New Game"
+script = ExtResource("2_ow34m")
+scene_to_load = "Level1"
+
+[node name="StageSelect" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1784032009]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ykhv")
+theme_override_font_sizes/font_size = 60
+text = "Stage Select"
+script = ExtResource("2_ow34m")
+scene_to_load = "StageSelect"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1734935661]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1030556451]
+layout_mode = 2
+texture = ExtResource("2_2wh52")
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StageSelect" to="HBoxContainer/VBoxContainer/VBoxContainer/StageSelect" method="_on_New_Game_pressed"]

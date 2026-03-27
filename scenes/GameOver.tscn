@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ceqpn0eg7xixr"]
+
+[ext_resource type="FontFile" uid="uid://cbatf6qi20kj3" path="res://assets/Fonts/Mikodacs.otf" id="1_6bcno"]
+[ext_resource type="Script" uid="uid://bxmnsbbk2e44x" path="res://scenes/link_button.gd" id="2_qae0b"]
+
+[node name="GameOver" type="ColorRect" unique_id=736617872]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1178661824]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.5
+offset_top = -149.0
+offset_right = 332.5
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1717887549]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -282.0
+offset_right = 185.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Retry" type="LinkButton" parent="VBoxContainer" unique_id=1268251891]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 80
+text = "Retry"
+script = ExtResource("2_qae0b")
+scene_to_load = "Level1"
+
+[node name="MainMenu" type="LinkButton" parent="VBoxContainer" unique_id=802021614]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+script = ExtResource("2_qae0b")
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="VBoxContainer/Retry" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="VBoxContainer/MainMenu" method="_on_New_Game_pressed"]

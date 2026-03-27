@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://7qn8xcll1rxf"]
+
+[ext_resource type="FontFile" uid="uid://cbatf6qi20kj3" path="res://assets/Fonts/Mikodacs.otf" id="1_k456m"]
+[ext_resource type="Script" uid="uid://bxmnsbbk2e44x" path="res://scenes/link_button.gd" id="2_eeirb"]
+
+[node name="StageSelect" type="MarginContainer" unique_id=1184931244]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=826174381]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=210995213]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer" unique_id=528194648]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 100
+text = "Level 1"
+script = ExtResource("2_eeirb")
+scene_to_load = "Level1"
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer" unique_id=1128042502]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 100
+text = "Level 2"
+script = ExtResource("2_eeirb")
+scene_to_load = "Level2"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/LinkButton2" method="_on_New_Game_pressed"]
